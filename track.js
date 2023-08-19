@@ -173,7 +173,13 @@ const nodemailer = require('nodemailer');
 function mailcontent(awb, data) {
     const title = `🚚  Package Update: Journeying to You [${awb}]`;
 
-    const content = `Hold that smile, your package is on the move! 🚚💨\n\n📍 Current Location: ${data.city}\n💬 Description: ${data.desc}\n🚚 Next Stop: ${data.nextSite}\n🧍 Signer: ${data.signer}\n🚀 Reason: ${data.reason}\n\n📣 This notification was sent by the system. Please do not reply`;
+    const city = data.city !== '' ? `📍 Current Location: ${data.city}\n` : '';
+    const desc = data.desc !== '' ? `💬 Description: ${data.desc}\n` : '';
+    const nextSite = data.nextSite !== '' ? `🚚 Next Stop: ${data.nextSite}\n` : '';
+    const signer = data.signer !== '' ? `🧍 Signer: ${data.signer}\n` : '';
+    const reason = data.reason !== '' ? `🚀 Reason: ${data.reason}` : '';
+
+    const content = `Hold that smile, your package is on the move! 🚚💨\n\n${city}${desc}${nextSite}${signer}${reason}\n\n📣 This notification was sent by the system. Please do not reply`;
 
     return {
         title,
