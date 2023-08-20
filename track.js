@@ -175,11 +175,12 @@ function mailcontent(awb, data) {
 
     const city = data.city !== '' ? `📍 Current Location: ${data.city}\n` : '';
     const desc = data.desc !== '' ? `💬 Description: ${data.desc}\n` : '';
+    const status = data.scanStatus !== '' ? `📦 Status: ${data.scanStatus}\n` : '';
     const nextSite = data.nextSite !== '' ? `🚚 Next Stop: ${data.nextSite}\n` : '';
     const signer = data.signer !== '' ? `🧍 Signer: ${data.signer}\n` : '';
     const reason = data.reason !== '' ? `🚀 Reason: ${data.reason}` : '';
 
-    const content = `Hold that smile, your package is on the move! 🚚💨\n\n${city}${desc}${nextSite}${signer}${reason}\n\n📣 This notification was sent by the system. Please do not reply`;
+    const content = `Hold that smile, your package is on the move! 🚚💨\n\n${city}${status}${desc}${nextSite}${signer}${reason}\n\n📣 This notification was sent by the system. Please do not reply`;
 
     return {
         title,
