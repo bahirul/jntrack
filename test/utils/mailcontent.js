@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const mailcontent = require('../../utils/mailcontent');
 
 // Test mailcontent module
-describe('mailcontent module', () => {
+describe('Utils mailcontent', () => {
     const fakeData = {
         city: 'Jakarta',
         desc: 'Package has been picked up',
