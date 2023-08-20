@@ -85,6 +85,8 @@ const nodemailer = require('nodemailer');
             // current data
             const current = details[0];
 
+            console.log(current);
+
             for (let j = 0; j < details.length; j++) {
                 // remove useless data
                 delete details[j]['deliveryName'];
@@ -175,7 +177,7 @@ function mailcontent(awb, data) {
 
     const city = data.city !== '' ? `📍 Current Location: ${data.city}\n` : '';
     const desc = data.desc !== '' ? `💬 Description: ${data.desc}\n` : '';
-    const status = data.scanStatus !== '' ? `📦 Status: ${data.scanStatus}\n` : '';
+    const status = data.scanstatus !== '' ? `📦 Status: ${data.scanstatus}\n` : '';
     const nextSite = data.nextSite !== '' ? `🚚 Next Stop: ${data.nextSite}\n` : '';
     const signer = data.signer !== '' ? `🧍 Signer: ${data.signer}\n` : '';
     const reason = data.reason !== '' ? `🚀 Reason: ${data.reason}` : '';
